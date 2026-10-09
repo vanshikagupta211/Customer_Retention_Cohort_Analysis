@@ -36,7 +36,7 @@ group by
 	Case When Order_Count = 1 then 'One-Time-Customer' else 'Repeat Customers' end
 order by Customer_Count desc 
 
--- Order Frequency Distribution (Repeat Purchase Analysis) 
+-- Order Frequency Distribution 
 with CustomerOrders as (
 select
 CustomerID,
