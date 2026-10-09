@@ -14,14 +14,14 @@ where CustomerID is not null and InvoiceNo is not null and Quantity > 0 and Unit
 
 -- Check Count of Rows of OnlineRetail_Cleaned Table 
 select 
-count(*) as Clearned_Row_Count
+count(*) as Cleaned_Row_Count
 from dbo.OnlineRetail_Cleaned
 
 -- Validate Cleaning Rules (Check again null, negative, zero etc)
 select
 count(*) as Total_Cleaned_rows,
 sum(case when CustomerID is null then 1 else 0 end) as Null_CustomerID,
-sum(case when InvoiceNo is null then 1 else 0 end) as Null_CustomerID,
+sum(case when InvoiceNo is null then 1 else 0 end) as Null_InvoiceNo,
 sum(case when Quantity <= 0 then 1 else 0 end) as Invalid_Quantity,
 sum(case when UnitPrice <= 0 then 1 else 0 end) as Invalid_UnitPrice
 from dbo.OnlineRetail_Cleaned
