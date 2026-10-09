@@ -99,7 +99,7 @@ DATEFROMPARTS(
 		1) as Sales_Month,
 count(distinct InvoiceNo) as Total_Orders,
 Round(sum(Revenue), 2) as Total_Revenue,
-Round(sum(Revenue) / NULLIF(count(distinct InvoiceNo), 0), 2) as Avergae_Order_Value 
+Round(sum(Revenue) / NULLIF(count(distinct InvoiceNo), 0), 2) as Average_Order_Value 
 from dbo.OnlineRetail_Cleaned
 group by 
 DATEFROMPARTS(
@@ -149,7 +149,7 @@ order by DATEPART(WEEKDAY, InvoiceDate)
 select
 DATEPART(HOUR, InvoiceDate) as Sales_Hour,
 count(distinct InvoiceNo) as Total_Orders,
-sum(Quantity) as Units_Sols,
+sum(Quantity) as Units_Sold,
 Round(sum(Revenue), 2) as Total_Revenue
 from dbo.OnlineRetail_Cleaned
 group by DATEPART(HOUR, InvoiceDate)
