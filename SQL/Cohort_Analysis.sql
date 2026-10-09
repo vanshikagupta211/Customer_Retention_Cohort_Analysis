@@ -78,7 +78,7 @@ DATEFROMPARTS(
 	YEAR(InvoiceDate),
 	MONTH(InvoiceDate),
 	1 ) as Purchase_Month,
-Count(distinct CustomerID) as Action_Customers,
+Count(distinct CustomerID) as Active_Customers,
 Count(distinct InvoiceNo) as Total_Orders,
 sum(Quantity) as Units_Sold,
 Round(sum(Quantity * UnitPrice), 2) as Revenue 
@@ -249,7 +249,7 @@ ORDER BY
     R.Cohort_Month,
     R.Month_Number;
 
--- Create Final Cohort Retention Table (Create Table)
+-- Create Final Cohort Retention Table 
 IF OBJECT_ID('dbo.Cohort_Retention', 'U') IS NOT NULL
 	DROP TABLE dbo.Cohort_Retention;
 
