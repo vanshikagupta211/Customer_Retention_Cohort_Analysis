@@ -26,7 +26,7 @@ from [dbo].[OnlineRetail_Raw]
 select
 count(*) as Total_Rows,
 ROUND(100.0 * sum(case when InvoiceNo is null then 1 else 0 end) / count(*), 2) as Missing_InvoiceNo_Percentage,
-ROUND(100.0 * sum(case when Description is null then 1 else 0 end) / count(*), 2) as Missing_Decription_Percentage,
+ROUND(100.0 * sum(case when Description is null then 1 else 0 end) / count(*), 2) as Missing_Description_Percentage,
 ROUND(100.0 * sum(case when CustomerID is null then 1 else 0 end) / count(*), 2) as Missing_CustomerID
 from [dbo].[OnlineRetail_Raw]
 
