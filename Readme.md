@@ -1,4 +1,10 @@
-# Customer Retention & Cohort Analysis
+# 📊 Customer Retention & Cohort Analysis
+
+*An end-to-end data analytics project using SQL Server, Python, and Power BI*
+
+*Author:* Vanshika Gupta
+
+---
 
 ## 📌 Project Overview
 
@@ -8,7 +14,7 @@ This end-to-end data analytics project analyzes transaction-level retail data to
 
 The project combines **SQL Server, Python, and Power BI** to demonstrate a complete analytics workflow:
 
-**Data Profiling → Data Cleaning → Exploratory Analysis → Cohort Analysis → Business Analysis → Interactive Dashboard Development → Business Insights**
+**Data Profiling → Data Cleaning → Exploratory Analysis → Cohort Analysis → Business Analysis → Interactive Dashboards → Business Insights**
 
 ---
 
@@ -32,81 +38,67 @@ The analysis addresses key business questions such as:
 
 ---
 
-# 📊 Dataset
+## 📂 Dataset Overview
 
-### Dataset: Online Retail Dataset
+*Dataset:* UCI Online Retail Dataset
 
-**Source:** UCI Machine Learning Repository — Online Retail Dataset
+*Source:* [UCI Machine Learning Repository — Online Retail](https://archive.ics.uci.edu/dataset/352/online+retail)
 
-The dataset contains transaction-level retail data from a UK-based online retailer.
+The dataset contains transaction-level information from a UK-based online retailer.
 
-**Dataset Period:** December 2010 – December 2011
-
-The dataset contains **541,909 transaction records** and 8 original columns.
+| Dataset attribute | Details                       |
+| ----------------- | ----------------------------- |
+| Original records  | 541,909                       |
+| Original columns  | 8                             |
+| Period            | December 2010 – December 2011 |
+| Data type         | Retail transaction data       |
 
 ### Original Dataset Columns
 
-| Column | Description |
-|---|---|
-| InvoiceNo | Transaction / invoice identifier |
-| StockCode | Product identifier |
-| Description | Product description |
-| Quantity | Number of units purchased |
-| InvoiceDate | Transaction date and time |
-| UnitPrice | Price per unit |
-| CustomerID | Customer identifier |
-| Country | Customer's country |
-
-**Dataset source:**
-
-```text
-https://archive.ics.uci.edu/dataset/352/online+retail
+| Column        | Description                       |
+| ------------- | --------------------------------- |
+| InvoiceNo   | Transaction or invoice identifier |
+| StockCode   | Product identifier                |
+| Description | Product description               |
+| Quantity    | Number of units purchased         |
+| InvoiceDate | Transaction date and time         |
+| UnitPrice   | Price per unit                    |
+| CustomerID  | Customer identifier               |
+| Country     | Customer's country                |
 
 ---
 
-# 🛠️ Tools & Technologies
+## 🛠️ Tools & Technologies
 
-## SQL Server
+*SQL Server*
 
-- SQL Server Management Studio (SSMS)
-- Data profiling
-- Data cleaning
-- Aggregations
-- CASE statements
-- Date functions
-- CTEs
-- Window functions
-- Cohort analysis
-- Customer analysis
-- Revenue analysis
+* SQL Server Management Studio (SSMS)
+* Data profiling and cleaning
+* Aggregations, joins, and CASE statements
+* CTEs and window functions
+* Date functions and revenue analysis
+* Cohort and customer analysis
 
-## Python
+*Python*
 
-- Python
-- Jupyter Notebook
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
+* Python and Jupyter Notebook
+* Pandas and NumPy
+* Matplotlib and Seaborn
+* Data cleaning, EDA, customer analysis, and cohort visualization
 
-## Power BI
+*Power BI*
 
-- Power BI Desktop
-- Power Query
-- DAX
-- Data modeling
-- Interactive dashboards 
-- Conditional formatting
-- Slicers
-- Page navigation
-- Drill-through
-- Report tooltips
+* Power Query and DAX
+* Data modeling and relationships
+* KPI cards and interactive visualizations
+* Conditional formatting and slicers
+* Page navigation, drill-through, and report tooltips
 
 ---
 
-# 🔄 Project Workflow
+## 🔄 Project Workflow
 
-```text
+text
 Raw UCI Online Retail Dataset
               ↓
        Data Profiling
@@ -121,136 +113,162 @@ SQL Business      EDA & Customer
        Cohort & Retention
            Analysis
               ↓
-      Power BI Dataset
+      Power BI Data Model
               ↓
-       DAX & Data Model
+       DAX & Visualizations
               ↓
      Interactive Dashboard
               ↓
       Business Insights
+              ↓
+     Recommendations
 
 ---
 
-🧹 Data Cleaning & Preparation
-The raw dataset was independently analyzed and cleaned using both SQL Server and Python.
+## 🧹 Data Cleaning & Preparation
+The raw dataset was independently analyzed and cleaned using SQL Server and Python.
 
-Major Data Quality Checks
+### Data Quality Checks
 The following issues were investigated:
 - Missing Customer IDs
 - Missing product descriptions
 - Duplicate transactions
-- Negative quantities
-- Invalid / non-positive unit prices
-- Cancellation-related transactions
+- Negative quantities and Cancellation-related transactions
+- Zero or negative unit prices
 - Invalid invoice records
-- Revenue calculation
+- Transaction-level revenue calculation
 - Date consistency
 - Customer-level transaction history
 
-Revenue Calculation
+### Revenue Calculation
+
 A transaction-level revenue field was created:
-Revenue = Quantity × UnitPrice
 
-Additional analytical fields were created:
-- PurchaseMonth
-- CohortMonth
-- CohortIndex
-- CustomerType
+*Revenue = Quantity × UnitPrice*
 
----
+Additional analytical fields were created for customer and cohort analysis:
 
-🗄️ SQL Server Analysis
-SQL Server was used to perform structured data profiling, cleaning, cohort analysis, and business analysis.
+* PurchaseMonth
+* CohortMonth
+* CohortIndex
+* CustomerType
 
-Key SQL Analyses
+### Python Cleaning Results
 
-1. Monthly Revenue Trend
-Analyzed monthly revenue performance to identify changes in sales over time.
+| Metric                   |  Result |
+| ------------------------ | ------: |
+| Raw transaction rows     | 541,909 |
+| Cleaned transaction rows | 392,692 |
+| Unique customers         |   4,338 |
+| Remaining duplicate rows |       0 |
 
-2. Monthly Revenue Growth
-Calculated month-over-month revenue growth to identify periods of increasing or decreasing sales.
+The Python cleaning workflow removed records with missing customer IDs, removed exact duplicates, excluded nonpositive quantities and unit prices, converted customer IDs to integers, and calculated revenue.
 
-3. Top Customers by Revenue
-Identified the highest-value customers based on total revenue generated.
-
-4. Product Performance
-Analyzed products based on:
-- Total revenue
-- Units sold
-
-5. Country-wise Sales Performance
-Compared revenue contribution across countries.
-
-6. Customer Purchase Frequency
-Analyzed the number of distinct orders placed by individual customers.
-
-7. One-Time vs Repeat Customers
-Compared customer counts and revenue contribution between one-time and repeat customers.
-
-8. Cohort Retention Analysis
-Customers were grouped based on their first purchase month and tracked across subsequent months to understand retention behavior.
+*Note:* SQL and Python were used as independent cleaning workflows. Their final row counts differ because of differences in cleaning and exclusion logic. The results should not be treated as identical datasets.
 
 ---
 
-🐍 Python Analysis
-Python was used to independently clean the raw UCI dataset and perform exploratory, customer, revenue, and cohort analysis.
+## 🗄️ SQL Server Analysis
 
-Python Data Cleaning
-The following cleaning logic was applied:
+SQL Server was used to profile the raw dataset, prepare the cleaned table, analyze customer behavior, and calculate cohort retention.
 
-df_clean = df.copy()
+### Key SQL Analyses
 
-df_clean = df_clean.dropna(subset=['CustomerID'])
-df_clean = df_clean.drop_duplicates()
-
-df_clean = df_clean[
-    (df_clean['Quantity'] > 0) &
-    (df_clean['UnitPrice'] > 0)
-]
-
-df_clean['CustomerID'] = df_clean['CustomerID'].astype(int)
-
-df_clean['Revenue'] = (
-    df_clean['Quantity'] *
-    df_clean['UnitPrice']
-)
-
-Python Cleaned Dataset
-After Python-based cleaning:
-- 392,692 transaction rows
-- 4,338 unique customers
-- No remaining missing values in the cleaned analytical dataset
-- No duplicate rows
-- Revenue calculated at transaction level
-
-SQL and Python cleaning were intentionally performed as independent analytical workflows. The resulting cleaned row counts differ because the cleaning and exclusion logic was implemented separately in each environment.
+1. *Monthly Revenue Trend* — analyzed revenue, orders, active customers, and units sold over time.
+2. *Monthly Revenue Growth* — calculated month-over-month revenue changes.
+3. *Top Products by Revenue* — identified high-revenue products.
+4. *Top Products by Units Sold* — identified products with the highest sales volume.
+5. *Top Customers by Revenue* — identified high-value customers.
+6. *Country-wise Sales Performance* — compared customer counts, orders, units, and revenue by country.
+7. *Average Order Value* — measured monthly revenue per order.
+8. *Customer Revenue Analysis* — compared total customer revenue and order frequency.
+9. *Product Performance* — evaluated revenue, units sold, orders, and customers.
+10. *Day-of-Week and Hourly Sales* — explored transaction timing.
+11. *Revenue Contribution by Country* — calculated each country's share of revenue.
+12. *Customer Purchase Frequency* — grouped customers by distinct order counts.
+13. *One-Time vs Repeat Customer Revenue* — compared revenue contribution by customer type.
+14. *Cohort Retention Analysis* — tracked customer activity after the first purchase month.
 
 ---
 
-📅 Cohort Analysis
-Cohort analysis was performed to understand customer retention over time.
-Each customer was assigned to a cohort based on the month of their first purchase.
+## 🐍 Python Analysis
 
-Cohort Definition
-Cohort Month = Customer's First Purchase Month
+Python was used to independently clean the raw dataset and perform exploratory analysis, customer analysis, revenue analysis, and cohort retention analysis.
 
-Cohort Index
-The cohort index represents the number of months since the customer's first purchase.
-Cohort Index 1 → First Purchase Month
-Cohort Index 2 → Month After First Purchase
-Cohort Index 3 → Two Months After First Purchase
-...
+### Key Analysis Areas
 
-Retention Calculation
-Retention Rate =
-Customers Active in Month N
-/
-Customers in Original Cohort
-× 100
+* Initial data profiling
+* Missing-value and duplicate analysis
+* Transaction cleaning and revenue calculation
+* Monthly revenue trends
+* Monthly active customers
+* Customer revenue ranking
+* Customer purchase frequency
+* Country-wise customer analysis
+* One-time versus repeat customer analysis
+* Cohort assignment and retention heatmap
 
-The analysis produced a cohort retention matrix and heatmap to identify retention patterns across different customer acquisition cohorts.
+### Customer Retention Results
+
+| Metric                 | Result |
+| ---------------------- | -----: |
+| Total customers        |  4,338 |
+| Repeat customers       |  2,845 |
+| One-time customers     |  1,493 |
+| Repeat customer rate   | 65.58% |
+| One-time customer rate | 34.42% |
+
+### Revenue Contribution by Customer Type
+
+| Customer type      |       Revenue | Revenue contribution |
+| ------------------ | ------------: | -------------------: |
+| Repeat customers   | £8,273,219.33 |               93.09% |
+| One-time customers |   £613,989.56 |                6.91% |
+
+*Key insight:* Repeat customers represent 65.58% of the customer base but generate 93.09% of total revenue. This highlights the importance of customer retention and repeat purchasing behavior.
 
 ---
+
+## 📅 Cohort Analysis
+
+Cohort analysis groups customers according to their first purchase month and tracks their subsequent purchasing activity.
+
+### Cohort Definition
+
+*Cohort Month:* The month of a customer's first purchase.
+
+*Cohort Index:* The number of months since the customer's first purchase, with Month 1 representing the initial purchase month in Python and Power BI.
+
+### Retention Calculation
+
+$$
+\text{Retention Rate} =
+\frac{\text{Customers Active in Month N}}
+{\text{Original Cohort Size}}
+\times 100
+$$
+
+The analysis produces a cohort retention matrix and heatmap to compare customer retention across acquisition cohorts.
+
+### Cohort Retention Results
+
+| Metric                    | Result |
+| ------------------------- | -----: |
+| Monthly cohorts           |     13 |
+| Average Month-1 Retention |  20.6% |
+| Average Month-3 Retention |  23.2% |
+
+These metrics summarize the Power BI cohort analysis. Retention comparisons should account for the fact that newer cohorts have fewer observed months.
+
+*Month numbering note:* SQL uses Month 0 for the initial purchase month, whereas Python and Power BI use Cohort Index 1. These represent the same initial cohort period.
+---
+
+
+
+
+
+
+
 
 📈 Customer Retention Analysis
 The Python analysis identified:
