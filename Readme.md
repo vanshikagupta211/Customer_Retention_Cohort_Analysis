@@ -98,7 +98,7 @@ The dataset contains transaction-level information from a UK-based online retail
 
 ## 🔄 Project Workflow
 
-text
+```text
 Raw UCI Online Retail Dataset
               ↓
        Data Profiling
@@ -122,6 +122,7 @@ SQL Business      EDA & Customer
       Business Insights
               ↓
      Recommendations
+```
 
 ---
 
@@ -261,440 +262,328 @@ The analysis produces a cohort retention matrix and heatmap to compare customer 
 These metrics summarize the Power BI cohort analysis. Retention comparisons should account for the fact that newer cohorts have fewer observed months.
 
 *Month numbering note:* SQL uses Month 0 for the initial purchase month, whereas Python and Power BI use Cohort Index 1. These represent the same initial cohort period.
----
-
-
-
-
-
-
-
-
-📈 Customer Retention Analysis
-The Python analysis identified:
-| Metric | Result |
-|---|---:|
-| Total Customers | 4,338 |
-| Repeat Customers | 2,845 |
-| One-Time Customers | 1,493 |
-| Repeat Customer Rate | 65.58% |
-| One-Time Customer Rate | 34.42% |
-
-Key Insight
-65.58% of customers are repeat customers, indicating that the majority of customers made more than one purchase during the observed period.
 
 ---
 
-💰 Revenue Contribution by Customer Type
-The analysis shows a significant difference in revenue contribution between repeat and one-time customers.
-| Customer Type | Revenue | Revenue Contribution |
-|---|---:|---:|
-| Repeat Customers | £8.27M | 93.09% |
-| One-Time Customers | £0.61M | 6.91% |
+## 📈 Customer Purchase Frequency
 
-Key Business Insight
-Repeat customers represent approximately 65.58% of the customer base but generate 93.09% of total revenue.
+Customer purchase frequency was calculated using the number of distinct invoices associated with each customer.
 
-This indicates that repeat purchasing behavior is a major driver of revenue.
-From a business perspective, this highlights the importance of:
-- Customer retention
-- Loyalty programs
-- Personalized offers
-- Repeat-purchase campaigns
-- Customer engagement
-- High-value customer management
+Key observations:
+
+* Many customers place relatively few orders.
+* A smaller group of customers places substantially more orders.
+* Purchase frequency follows a long-tail pattern.
+* The highest observed frequency was 209 distinct orders for one customer.
+
+This analysis helps distinguish occasional buyers from highly engaged repeat customers.
 
 ---
 
-📊 Cohort Retention Findings
-The Power BI cohort analysis contains 13 monthly cohorts.
+## 🌍 Geographic Analysis
 
-Key Cohort Metrics
-| Metric | Result |
-|---|---:|
-| Total Cohorts | 13 |
-| Average Month-1 Retention | 20.6% |
-| Average Month-3 Retention | 23.2% |
+The project compares customer distribution and revenue contribution across countries.
 
-The cohort heatmap demonstrates how customer retention changes over the months following the first purchase.
-The analysis can help identify:
-- Stronger-performing customer cohorts
-- Retention drop-off patterns
-- Differences between acquisition periods
-- Opportunities for improving second and subsequent purchases
+The United Kingdom is the dominant market in this dataset. Other important markets include the Netherlands, EIRE, Germany, France, Australia, Spain, Switzerland, Belgium, and Sweden.
+
+Country-level analysis helps identify the most significant markets represented in the transaction data.
 
 ---
 
-👥 Customer Purchase Frequency
-Customer purchase frequency was analyzed using the number of distinct invoices/orders associated with each customer.
-Key observations include:
-- Most customers place relatively few orders.
-- A smaller group of customers places significantly more orders.
-- The distribution shows a strong long-tail pattern.
-- The highest observed customer purchase frequency was 209 distinct orders.
-This highlights the presence of highly engaged customers who contribute significantly to repeat purchasing behavior.
+## 📊 Power BI Dashboard
 
----
+The Power BI report contains *four main analytical pages*, supported by a dedicated customer drill-through page and a custom report tooltip.
 
-🛍️ Customer & Product Analysis
+## 📸 Dashboard Preview
 
-The Power BI dashboard includes:
-Top 10 Customers by Revenue
-Identifies customers contributing the highest total revenue.
+The screenshots below will display once the corresponding image files are uploaded to the Screenshots/ folder.
 
-Top 10 Products by Revenue
-Identifies the products generating the highest revenue.
+### 1. Customer Retention Overview
 
-Top 10 Products by Units Sold
-Identifies products with the highest sales volume.
+![Customer Retention Overview](Screenshots/Customer_Retention_Overview.png)
 
-Customer Purchase Frequency
-Visualizes the distribution of customers according to the number of orders placed.
+Provides a high-level view of customers, repeat purchasing, and revenue trends.
 
-These analyses help distinguish between:
-- High-value customers
-- High-frequency customers
-- High-revenue products
-- High-volume products
+*KPIs*
 
----
+* Total Customers
+* Repeat Customers
+* Repeat Customer Rate
+* Average Revenue per Customer
 
-🌍 Geographic Analysis
-The project analyzes both customer distribution and revenue contribution by country.
+*Visuals*
 
-The United Kingdom is the dominant market in the dataset and contributes the majority of:
-- Total customers
-- Total revenue
-Other important markets include:
-- Netherlands
-- EIRE
-- Germany
-- France
-- Australia
-- Spain
-- Switzerland
-- Belgium
-- Sweden
-This analysis helps identify the most important geographic markets represented in the dataset.
+* Monthly Active Customers
+* Monthly Revenue Trend
+* Revenue by Customer Type
+* One-Time vs Repeat Customers
 
----
+### 2. Cohort Retention Analysis
 
-📅 Sales Trend Analysis
+![Cohort Retention Analysis](Screenshots/Cohort_Retention_Analysis.png)
 
-The Power BI dashboard includes:
-Monthly Revenue Trend
-Tracks total revenue across the analysis period.
+Examines retention patterns across customer cohorts.
 
-Monthly Revenue Growth
-Shows month-over-month revenue changes.
+*KPIs*
 
-Average Order Value Trend
-Tracks changes in the average revenue generated per order.
+* Total Cohorts
+* Average Month-1 Retention
+* Average Month-3 Retention
 
-Revenue by Day of Week
-Compares revenue performance across different days of the week.
+*Visuals*
 
-Important: December 2011 is a partial month because the dataset ends on 9 December 2011. Therefore, December 2011 revenue should not be directly compared with complete months.
+* Cohort Retention Heatmap
+* Retention Rate by Months Since First Purchase
+* Customer Cohort Size
 
----
+### 3. Customer & Product Analysis
 
-📊 Power BI Dashboard
-The final Power BI report contains 4 main analytical pages, supported by dedicated drill-through and tooltip pages.
+![Customer & Product Analysis](Screenshots/Customer_Product_Analysis.png)
 
-1️⃣ Customer Retention Overview
+Identifies high-value customers, high-performing products, and customer purchase frequency.
 
-KPI Cards
-- Total Customers
-- Repeat Customers
-- Repeat Customer Rate
-- Average Revenue per Customer
+*Visuals*
 
-Visuals
-- Monthly Active Customers
-- Monthly Revenue Trend
-- Revenue by Customer Type
-- One-Time vs Repeat Customers
+* Top 10 Customers by Revenue
+* Top 10 Products by Revenue
+* Customer Purchase Frequency
+* Top 10 Products by Units Sold
 
-Interactive Filters
-- Customer Type
-- Country
-- Purchase Month
+### 4. Sales & Geographic Analysis
 
-Purpose
-Provides a high-level view of the customer base, retention, and revenue contribution.
+![Sales & Geographic Analysis](Screenshots/Sales_Geographic_Analysis.png)
 
-2️⃣ Cohort Retention Analysis
+Explores geographic sales performance and monthly trends.
 
-KPI Cards
-- Total Cohorts
-- Average Month-1 Retention
-- Average Month-3 Retention
+*Visuals*
 
-Visuals
-- Customer Retention by Cohort
-- Cohort Retention Heatmap
-- Retention Rate by Months Since First Purchase
-- Customer Cohort Size
+* Revenue by Country
+* Customers by Country
+* Monthly Revenue Growth
+* Average Order Value Trend
+* Revenue by Day of Week
 
-Purpose
-Provides a detailed view of customer retention behavior across acquisition cohorts.
+### 5. Customer Detail — Drill-through
 
-3️⃣ Customer & Product Analysis
+![Customer Detail](Screenshots/Customer_Detail.png)
 
-Visuals
-- Top 10 Customers by Revenue
-- Top 10 Products by Revenue
-- Customer Purchase Frequency
-- Top 10 Products by Units Sold
+Provides customer-level transaction details, including revenue, orders, average order value, customer type, and individual transactions.
 
-Purpose
-Identifies high-value customers, high-performing products, and customer purchasing behavior.
+## 🔎 Advanced Power BI Features
 
-4️⃣ Sales & Geographic Analysis
+### Page Navigation
 
-Visuals
-- Revenue by Country
-- Customers by Country
-- Monthly Revenue Growth
-- Average Order Value Trend
-- Revenue by Day of Week
+A navigation bar enables users to move between the main dashboard pages and access the customer detail page.
 
-Purpose
-Provides a geographic and sales-performance perspective of the business.
+### Drill-through Analysis
 
-🔎 Advanced Power BI Features
-The project also demonstrates advanced Power BI functionality beyond basic visualizations.
+A dedicated Customer Detail page allows users to investigate a selected customer's:
 
-Page Navigation
-A navigation bar was implemented to allow users to move between the main dashboard pages.
-The navigation includes:
-- Customer Retention Overview
-- Cohort Retention Analysis
-- Customer & Product Analysis
-- Sales & Geographic Analysis
-- Customer Detail
+* Total Revenue
+* Total Orders
+* Average Order Value
+* Customer Type
+* Transaction-level history
 
-Drill-through Analysis
-A dedicated Customer Detail page was created using Power BI drill-through functionality.
+### Custom Report Tooltip
 
-Users can select a customer from the report and drill through to view:
-- Total Revenue
-- Total Orders
-- Average Order Value
-- Customer Type
-- Transaction-level details
+A dedicated Revenue Tooltip page displays additional contextual KPIs when hovering over supported revenue-related visuals:
 
-The transaction detail table includes fields such as:
-- Invoice Date
-- Invoice Number
-- Product Description
-- Quantity
-- Unit Price
-- Revenue
-This allows the analysis to move from a high-level dashboard view to individual customer transactions.
+* Total Revenue
+* Total Orders
+* Average Order Value
+* Active Customers
 
-Custom Report Tooltip
-A dedicated Revenue Tooltip page was created to provide additional information when users hover over revenue-related visual elements.
+### Interactive Slicers
 
-The tooltip includes:
-- Total Revenue
-- Total Orders
-- Average Order Value
-- Active Customers
-This provides additional context without overcrowding the main dashboard.
+The report uses slicers for filtering analysis by customer type, country, and purchase month on the relevant pages.
 
-Interactive Slicers
-The report includes interactive slicers for filtering analysis by:
-- Customer Type
-- Country
-- Purchase Month
-The slicers allow users to dynamically explore different customer and sales segments.
+## 🧮 Key DAX Measures
 
----
+The following are examples of measures used in the Power BI report.
 
-🧮 Key DAX Measures
+*Total Revenue*
+
+dax
+Total Revenue =
+SUM(customer_retention_powerbi[Revenue])
 
 
+*Total Orders*
+
+dax
+Total Orders =
+DISTINCTCOUNT(customer_retention_powerbi[InvoiceNo])
 
 
----
+*Total Customers*
 
-🧱 Power BI Data Model
+dax
+Total Customers =
+DISTINCTCOUNT(customer_retention_powerbi[CustomerID])
 
-The Power BI model contains:
-Main Transaction Table
+
+*Repeat Customers*
+
+dax
+Repeat Customers =
+CALCULATE(
+    DISTINCTCOUNT(customer_retention_powerbi[CustomerID]),
+    customer_retention_powerbi[CustomerType] = "Repeat Customer"
+)
+
+
+*Repeat Customer Rate*
+
+dax
+Repeat Customer Rate =
+DIVIDE(
+    [Repeat Customers],
+    [Total Customers],
+    0
+)
+
+
+*Average Order Value*
+
+dax
+Average Order Value =
+DIVIDE(
+    [Total Revenue],
+    [Total Orders],
+    0
+)
+
+## 🧱 Power BI Data Model
+
+### Main Transaction Table
+
 customer_retention_powerbi
 
-Contains:
-- Transaction information
-- Customer information
-- Product information
-- Revenue
-- Purchase Month
-- Cohort Month
-- Cohort Index
-- Customer Type
+Contains transaction, customer, product, revenue, purchase-month, cohort, and customer-type information.
 
-Customer Summary Table
+### Customer Summary Table
+
 Customer Summary
-Used for customer-level purchase frequency analysis.
 
-Relationship:
-Customer Summary (1)
-        │
-        │ CustomerID
-        │
-        ▼
-customer_retention_powerbi (*)
+Provides customer-level order counts for purchase-frequency analysis.
 
-Measures Table
+*Relationship:* Customer Summary[CustomerID] (one) → customer_retention_powerbi[CustomerID] (many), with single-direction filtering.
+
+### Measures Table
+
 All Measures
-A dedicated measure table containing the project's DAX measures.
+
+A dedicated table that organizes the report's DAX measures. It is not connected to the transaction tables through relationships.
 
 ---
 
-📁 Project Structure
+## 📂 Project Files
 
+Use the links below to open the project components directly on GitHub.
+
+| Component   | File / Link                                                              | Description                                                 |
+| ----------- | ------------------------------------------------------------------------ | ----------------------------------------------------------- |
+| SQL         | [SQL Scripts Folder](SQL/)                                               | Profiling, cleaning, cohort analysis, and business analysis |
+| SQL         | [Data Profiling](SQL/Data_Profiling.sql)                                 | Raw data quality assessment                                 |
+| SQL         | [Data Cleaning](SQL/Data_Cleaning.sql)                                   | Cleaned table creation and validation                       |
+| SQL         | [Cohort Analysis](SQL/Cohort_Analysis.sql)                               | Cohort assignment and retention calculations                |
+| SQL         | [Business Analysis](SQL/Business_Analysis.sql)                           | Customer, product, revenue, and geographic analysis         |
+| Python      | [Jupyter Notebook](Python/Customer_Retention_Cohort_Analysis.ipynb)      | Cleaning, EDA, customer analysis, and cohort heatmap        |
+| Power BI    | [Power BI Dashboard](Power%20BI/Customer_Retention_Cohort_Analysis.pbix) | Interactive dashboard report                                |
+| Screenshots | [Dashboard Screenshots](Screenshots/)                                    | Preview images of the report                                |
+| Data        | [Dataset Documentation](Data/)                                           | Dataset source and documentation                            |
+
+*Note:* The raw dataset is not included in the repository. Download it from the [UCI Online Retail dataset page](https://archive.ics.uci.edu/dataset/352/online+retail).
+
+---
+
+## 📁 Repository Structure
+
+text
 Customer-Retention-Cohort-Analysis/
-│
 ├── README.md
-│
 ├── SQL/
 │   ├── Data_Profiling.sql
 │   ├── Data_Cleaning.sql
 │   ├── Cohort_Analysis.sql
 │   └── Business_Analysis.sql
-│
 ├── Python/
 │   └── Customer_Retention_Cohort_Analysis.ipynb
-│
 ├── Power BI/
 │   └── Customer_Retention_Cohort_Analysis.pbix
-│
 ├── Screenshots/
 │   ├── Customer_Retention_Overview.png
 │   ├── Cohort_Retention_Analysis.png
 │   ├── Customer_Product_Analysis.png
 │   ├── Sales_Geographic_Analysis.png
 │   └── Customer_Detail.png
-│
 └── Data/
     └── README.md
 
 ---
 
-💡 Business Recommendations
-Based on the analysis, several business actions can be considered.
+## 💡 Business Insights
 
-1. Improve First-to-Second Purchase Conversion
-Customer retention drops significantly after the initial purchase.
-Potential strategies include:
-- Personalized follow-up campaigns
-- Second-purchase incentives
-- Product recommendations
-- Email reminders
-- Targeted promotional offers
-
-2. Focus on Repeat Customers
-Repeat customers generate the majority of revenue.
-Businesses should consider:
-- Loyalty programs
-- Personalized offers
-- Customer engagement campaigns
-- Repeat-purchase incentives
-- Retention-focused marketing
-
-3. Identify and Retain High-Value Customers
-A relatively small number of customers contribute substantial revenue.
-Potential strategies include:
-- VIP customer programs
-- Exclusive offers
-- Personalized recommendations
-- Early access to products
-- Dedicated customer engagement
-
-4. Monitor Cohort Performance
-Cohort analysis can help businesses understand whether newer customer groups are becoming more or less engaged over time.
-Tracking retention by cohort can support:
-- Marketing performance evaluation
-- Customer acquisition analysis
-- Retention strategy optimization
-- Campaign comparison
-
-5. Analyze Geographic Opportunities
-The United Kingdom dominates the dataset, while other countries represent smaller customer bases.
-Businesses could use country-level analysis to identify opportunities for:
-- Market expansion
-- Localized marketing
-- Regional promotions
-- Customer acquisition strategies
+1. *Repeat customers drive revenue:* Repeat customers contribute 93.09% of total revenue in the Python analysis.
+2. *Retention deserves attention:* Tracking cohorts helps identify when customer engagement changes after the first purchase.
+3. *Customer value varies:* A small group of high-value customers can contribute substantially to revenue.
+4. *Purchase frequency differs:* Customer-level order counts reveal both occasional and highly engaged buyers.
+5. *The UK dominates the dataset:* Country-level analysis shows that the United Kingdom represents the main market.
 
 ---
 
-📌 Key Project Takeaways
-This project demonstrates that:
-- Repeat customers are a major driver of revenue.
-- Customer retention should be analyzed by cohort rather than only through overall averages.
-- Customer purchase frequency has a strong long-tail distribution.
-- A small group of customers contributes significantly to overall revenue.
-- The UK is the dominant market in the dataset.
-- Combining SQL, Python, and Power BI provides a complete end-to-end analytics workflow.
-- Interactive dashboards can transform transaction-level data into actionable business insights.
+## 🎯 Business Recommendations
+
+### 1. Improve First-to-Second Purchase Conversion
+
+Consider personalized follow-ups, second-purchase incentives, relevant product recommendations, and targeted promotions.
+
+### 2. Focus on Repeat Customers
+
+Use loyalty programs, relevant offers, and retention campaigns to encourage continued purchasing.
+
+### 3. Identify High-Value Customers
+
+Develop customer engagement strategies for customers who generate substantial revenue or purchase frequently.
+
+### 4. Monitor Cohort Performance
+
+Track retention by cohort to evaluate changes in customer behavior and assess retention initiatives.
+
+### 5. Explore Geographic Opportunities
+
+Use country-level sales and customer data to investigate regional marketing and expansion opportunities.
+
+These recommendations are potential business actions suggested by the analysis; their effectiveness would need to be tested using campaign or operational data.
 
 ---
 
-🚀 Skills Demonstrated
+## 📌 Key Project Takeaways
 
-Data Analytics
-- Data Cleaning
-- Data Profiling
-- Exploratory Data Analysis
-- Customer Analytics
-- Cohort Analysis
-- Retention Analysis
-- Revenue Analysis
-- Customer Segmentation
-- Purchase Frequency Analysis
-- Geographic Analysis
-
-SQL
-- SQL Server
-- Data Transformation
-- Aggregations
-- CTEs
-- Window Functions
-- Date Functions
-- Customer-Level Analysis
-- Cohort Analysis
-
-Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Data Cleaning
-- EDA
-- Customer Analysis
-- Cohort Analysis
-- Data Visualization
-
-Power BI
-- Power Query
-- DAX
-- Data Modeling
-- Relationships
-- KPI Development
-- Interactive Visualizations
-- Conditional Formatting
-- Slicers
-- Page Navigation
-- Drill-through
-- Report Tooltips
-- Business Dashboard Design
+* Repeat customers are a major revenue driver.
+* Cohort analysis reveals retention patterns that overall averages may hide.
+* Customer purchase frequency follows a long-tail distribution.
+* Customer and product revenue analysis helps identify high-value segments.
+* Geographic analysis highlights the UK as the dominant market.
+* SQL Server, Python, and Power BI together provide an end-to-end analytics workflow.
 
 ---
 
-🎓 End-to-End Analytics Approach
+## 🚀 Skills Demonstrated
+
+*Data Analytics:* Data profiling, data cleaning, EDA, customer analytics, cohort analysis, retention analysis, revenue analysis, and business recommendations.
+
+*SQL:* SQL Server, aggregations, CTEs, window functions, date functions, data transformation, and customer-level analysis.
+
+*Python:* Pandas, NumPy, Matplotlib, Seaborn, data cleaning, EDA, customer analysis, and cohort visualization.
+
+*Power BI:* Power Query, DAX, data modeling, relationships, KPI development, conditional formatting, slicers, navigation, drill-through, tooltips, and dashboard design.
+
+---
+
+## 🎓 End-to-End Analytics Approach
+
 This project demonstrates an end-to-end approach to solving a business analytics problem:
 
 Business Problem
@@ -723,36 +612,33 @@ Actionable Recommendations
 
 ---
 
-📌 Conclusion
-The Customer Retention & Cohort Analysis project provides an end-to-end view of customer purchasing behavior using SQL Server, Python, and Power BI.
+## ✅ Conclusion
 
-The analysis demonstrates how transaction-level data can be transformed into meaningful business insights around:
-- Customer retention
-- Repeat purchasing
-- Cohort performance
-- Revenue contribution
-- Customer value
-- Product performance
-- Purchase frequency
-- Geographic performance
+This project demonstrates how transaction-level retail data can be transformed into meaningful business insights using SQL Server, Python, and Power BI.
 
-The most significant finding is that repeat customers represent 65.58% of the customer base but contribute 93.09% of total revenue, highlighting the importance of customer retention and repeat purchasing behavior.
-The final Power BI dashboard converts these findings into an interactive analytical experience that allows users to explore customer behavior at both aggregated and transaction levels.
+The analysis covers customer retention, repeat purchasing, cohort performance, revenue contribution, customer value, product performance, purchase frequency, and geographic sales.
+
+The key finding is that repeat customers represent *65.58% of the customer base but contribute 93.09% of total revenue* in the Python analysis. This highlights the importance of customer retention and repeat purchasing behavior.
+
+The final Power BI report translates the analysis into an interactive experience, allowing users to explore performance at both aggregated and individual-customer levels.
 
 ---
 
-👩‍💻 Author
-Vanshika Gupta
-Data Analyst | SQL | Python | Power BI | Tableau | Advanced Analytics
+## 👩‍💻 Author
 
-⭐ Project Highlights
-Dataset: UCI Online Retail Dataset
-Records: 541,909 raw transactions
-Customers: 4,338
-Repeat Customers: 2,845
-Repeat Customer Rate: 65.58%
-Repeat Customer Revenue Contribution: 93.09%
-Cohorts: 13 monthly cohorts
-Tools: SQL Server | Python | Power BI
-Dashboard Pages: 4 analytical pages + Drill-through + Tooltip
-```
+*Vanshika Gupta*
+
+Data Analyst | SQL Server | Python | Power BI | Tableau | Advanced Analytics
+
+### Project Highlights
+
+* *Dataset:* UCI Online Retail
+* *Raw transactions:* 541,909
+* *Customers in Python analysis:* 4,338
+* *Repeat customer rate:* 65.58%
+* *Repeat customer revenue contribution:* 93.09%
+* *Monthly cohorts:* 13
+* *Tools:* SQL Server, Python, Power BI
+* *Report:* 4 main dashboard pages, plus customer drill-through and custom tooltip
+
+⭐ If you find this project useful, feel free to explore the SQL scripts, Python notebook, and Power BI report above.
