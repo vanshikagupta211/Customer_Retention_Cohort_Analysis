@@ -581,7 +581,7 @@ These recommendations are potential business actions suggested by the analysis; 
 ## 🎓 End-to-End Analytics Approach
 
 This project demonstrates an end-to-end approach to solving a business analytics problem:
-
+``` text
 Business Problem
        ↓
 Raw Transaction Data
@@ -605,7 +605,7 @@ Interactive Power BI Dashboard
 Business Insights
        ↓
 Actionable Recommendations
-
+```
 ---
 
 ## ✅ Conclusion
