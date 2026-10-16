@@ -121,7 +121,7 @@ SQL Business      EDA & Customer
               ↓
       Business Insights
               ↓
-     Recommendations
+       Recommendations
 ```
 
 ---
@@ -296,11 +296,9 @@ The Power BI report contains *four main analytical pages*, supported by a dedica
 
 ## 📸 Dashboard Preview
 
-The screenshots below will display once the corresponding image files are uploaded to the Screenshots/ folder.
-
 ### 1. Customer Retention Overview
 
-![Customer Retention Overview](Screenshots/Customer_Retention_Overview.png)
+![Customer Retention Overview](Images/Customer%20Retention%20Overview.png)
 
 Provides a high-level view of customers, repeat purchasing, and revenue trends.
 
@@ -320,7 +318,7 @@ Provides a high-level view of customers, repeat purchasing, and revenue trends.
 
 ### 2. Cohort Retention Analysis
 
-![Cohort Retention Analysis](Screenshots/Cohort_Retention_Analysis.png)
+![Cohort Retention Analysis](Images/Cohort%20Retention%20Analysis.png)
 
 Examines retention patterns across customer cohorts.
 
@@ -338,7 +336,7 @@ Examines retention patterns across customer cohorts.
 
 ### 3. Customer & Product Analysis
 
-![Customer & Product Analysis](Screenshots/Customer_Product_Analysis.png)
+![Customer & Product Analysis](Images/Customer%20Product%20Analysis.png)
 
 Identifies high-value customers, high-performing products, and customer purchase frequency.
 
@@ -351,7 +349,7 @@ Identifies high-value customers, high-performing products, and customer purchase
 
 ### 4. Sales & Geographic Analysis
 
-![Sales & Geographic Analysis](Screenshots/Sales_Geographic_Analysis.png)
+![Sales & Geographic Analysis](Images/Sales%20Geographic%20Analysis.png)
 
 Explores geographic sales performance and monthly trends.
 
@@ -365,7 +363,7 @@ Explores geographic sales performance and monthly trends.
 
 ### 5. Customer Detail — Drill-through
 
-![Customer Detail](Screenshots/Customer_Detail.png)
+![Customer Detail](Images/Customer%20Detail.png)
 
 Provides customer-level transaction details, including revenue, orders, average order value, customer type, and individual transactions.
 
@@ -484,15 +482,14 @@ Use the links below to open the project components directly on GitHub.
 
 | Component   | File / Link                                                              | Description                                                 |
 | ----------- | ------------------------------------------------------------------------ | ----------------------------------------------------------- |
-| SQL         | [SQL Scripts Folder](SQL/)                                               | Profiling, cleaning, cohort analysis, and business analysis |
-| SQL         | [Data Profiling](SQL/Data_Profiling.sql)                                 | Raw data quality assessment                                 |
-| SQL         | [Data Cleaning](SQL/Data_Cleaning.sql)                                   | Cleaned table creation and validation                       |
-| SQL         | [Cohort Analysis](SQL/Cohort_Analysis.sql)                               | Cohort assignment and retention calculations                |
-| SQL         | [Business Analysis](SQL/Business_Analysis.sql)                           | Customer, product, revenue, and geographic analysis         |
-| Python      | [Jupyter Notebook](Python/Customer_Retention_Cohort_Analysis.ipynb)      | Cleaning, EDA, customer analysis, and cohort heatmap        |
-| Power BI    | [Power BI Dashboard](Power%20BI/Customer_Retention_Cohort_Analysis.pbix) | Interactive dashboard report                                |
-| Screenshots | [Dashboard Screenshots](Screenshots/)                                    | Preview images of the report                                |
-| Data        | [Dataset Documentation](Data/)                                           | Dataset source and documentation                            |
+| SQL Scripts        | [Open SQL Folder](SQL/)                                               | Profiling, cleaning, cohort analysis, and business analysis |
+| Data Profiling         | [Open SQL File](SQL/Data_Profiling.sql)                                 | Raw data quality assessment                                 |
+| Data Cleaning         | [Open SQL File](SQL/Data_Cleaning.sql)                                   | Cleaned table creation and validation                       |
+| Cohort Analysis         | [Open SQL File](SQL/Cohort_Analysis.sql)                               | Cohort assignment and retention calculations                |
+| Business Analysis         | [Open SQL File](SQL/Business_Analysis.sql)                           | Customer, product, revenue, and geographic analysis         |
+| Python      | [Open Jupyter Notebook](Notebook/Customer%20Retention%20Cohort%20Analysis.ipynb)      | Cleaning, EDA, customer analysis, and cohort heatmap        |
+| Power BI    | [Open Dashboard File](Power%20BI/Customer%20Retention%20Cohort%20Analysis.pbix) | Interactive dashboard report                                |
+| Dashboard Images | [View Images Folder](Images/)                                    | Preview images of the report                                |
 
 *Note:* The raw dataset is not included in the repository. Download it from the [UCI Online Retail dataset page](https://archive.ics.uci.edu/dataset/352/online+retail).
 
@@ -500,7 +497,7 @@ Use the links below to open the project components directly on GitHub.
 
 ## 📁 Repository Structure
 
-text
+``` text
 Customer-Retention-Cohort-Analysis/
 ├── README.md
 ├── SQL/
@@ -520,6 +517,7 @@ Customer-Retention-Cohort-Analysis/
 │   └── Customer_Detail.png
 └── Data/
     └── README.md
+```
 
 ---
 
