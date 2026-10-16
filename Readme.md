@@ -336,7 +336,7 @@ Examines retention patterns across customer cohorts.
 
 ### 3. Customer & Product Analysis
 
-![Customer & Product Analysis](Images/Customer%20Product%20Analysis.png)
+![Customer & Product Analysis](Images/Customer%20%26%20Product%20Analysis.png)
 
 Identifies high-value customers, high-performing products, and customer purchase frequency.
 
@@ -349,7 +349,7 @@ Identifies high-value customers, high-performing products, and customer purchase
 
 ### 4. Sales & Geographic Analysis
 
-![Sales & Geographic Analysis](Images/Sales%20Geographic%20Analysis.png)
+![Sales & Geographic Analysis](Images/Sales%20%26%20Geographic%20Analysis.png)
 
 Explores geographic sales performance and monthly trends.
 
@@ -487,8 +487,8 @@ Use the links below to open the project components directly on GitHub.
 | Data Cleaning         | [Open SQL File](SQL/Data_Cleaning.sql)                                   | Cleaned table creation and validation                       |
 | Cohort Analysis         | [Open SQL File](SQL/Cohort_Analysis.sql)                               | Cohort assignment and retention calculations                |
 | Business Analysis         | [Open SQL File](SQL/Business_Analysis.sql)                           | Customer, product, revenue, and geographic analysis         |
-| Python      | [Open Jupyter Notebook](Notebook/Customer%20Retention%20Cohort%20Analysis.ipynb)      | Cleaning, EDA, customer analysis, and cohort heatmap        |
-| Power BI    | [Open Dashboard File](Power%20BI/Customer%20Retention%20Cohort%20Analysis.pbix) | Interactive dashboard report                                |
+| Python      | [Open Jupyter Notebook](Notebook/Customer%20Retention%20%26%20Cohort%20Analysis%20.ipynb)      | Cleaning, EDA, customer analysis, and cohort heatmap        |
+| Power BI    | [Open Dashboard File](Power%20BI/Customer%20Retention%20%26%20Cohort%20Analysis.pbix) | Interactive dashboard report                                |
 | Dashboard Images | [View Images Folder](Images/)                                    | Preview images of the report                                |
 
 *Note:* The raw dataset is not included in the repository. Download it from the [UCI Online Retail dataset page](https://archive.ics.uci.edu/dataset/352/online+retail).
@@ -509,14 +509,12 @@ Customer-Retention-Cohort-Analysis/
 │   └── Customer_Retention_Cohort_Analysis.ipynb
 ├── Power BI/
 │   └── Customer_Retention_Cohort_Analysis.pbix
-├── Screenshots/
+├── Images/
 │   ├── Customer_Retention_Overview.png
 │   ├── Cohort_Retention_Analysis.png
 │   ├── Customer_Product_Analysis.png
 │   ├── Sales_Geographic_Analysis.png
 │   └── Customer_Detail.png
-└── Data/
-    └── README.md
 ```
 
 ---
