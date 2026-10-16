@@ -578,36 +578,6 @@ These recommendations are potential business actions suggested by the analysis; 
 
 ---
 
-## 🎓 End-to-End Analytics Approach
-
-This project demonstrates an end-to-end approach to solving a business analytics problem:
-``` text
-Business Problem
-       ↓
-Raw Transaction Data
-       ↓
-Data Quality Assessment
-       ↓
-Data Cleaning
-       ↓
-SQL Business Analysis
-       ↓
-Python Exploratory Analysis
-       ↓
-Customer Cohort Analysis
-       ↓
-Retention Analysis
-       ↓
-DAX & Data Modeling
-       ↓
-Interactive Power BI Dashboard
-       ↓
-Business Insights
-       ↓
-Actionable Recommendations
-```
----
-
 ## ✅ Conclusion
 
 This project demonstrates how transaction-level retail data can be transformed into meaningful business insights using SQL Server, Python, and Power BI.
